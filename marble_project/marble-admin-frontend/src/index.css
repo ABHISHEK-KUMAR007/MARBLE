@@ -1,0 +1,146 @@
+:root {
+  --text: #302d38;
+  --text-h: #121218;
+  --bg: #fcfbf8;
+  --border: #e7e2db;
+  --code-bg: #f3efe8;
+  --accent: #b8860b;
+  --accent-bg: rgba(184, 134, 11, 0.12);
+  --accent-border: rgba(184, 134, 11, 0.3);
+  --social-bg: rgba(244, 240, 232, 0.8);
+  --shadow: rgba(17, 21, 33, 0.12) 0 12px 30px -18px, rgba(17, 21, 33, 0.06) 0 4px 12px -8px;
+
+  --sans: Inter, 'Segoe UI', Roboto, system-ui, sans-serif;
+  --heading: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/1.6 var(--sans);
+  letter-spacing: 0.01em;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #d8d3ca;
+    --text-h: #f8f4eb;
+    --bg: #17161b;
+    --border: #342f39;
+    --code-bg: #221f26;
+    --accent: #d4b36a;
+    --accent-bg: rgba(212, 179, 106, 0.16);
+    --accent-border: rgba(212, 179, 106, 0.3);
+    --social-bg: rgba(37, 34, 41, 0.8);
+    --shadow: rgba(0, 0, 0, 0.32) 0 12px 30px -18px, rgba(0, 0, 0, 0.18) 0 4px 12px -8px;
+  }
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: clamp(17px, 0.35vw + 1rem, 18.5px);
+  line-height: 1.8;
+  font-weight: 450;
+  letter-spacing: -0.01em;
+}
+
+.text-xs {
+  font-size: clamp(0.88rem, 0.24vw + 0.82rem, 1rem) !important;
+}
+
+.text-sm {
+  font-size: clamp(0.96rem, 0.22vw + 0.9rem, 1.06rem) !important;
+}
+
+.text-base {
+  font-size: clamp(1.02rem, 0.25vw + 0.96rem, 1.12rem) !important;
+}
+
+.text-lg {
+  font-size: clamp(1.1rem, 0.3vw + 1.02rem, 1.22rem) !important;
+}
+
+.text-xl {
+  font-size: clamp(1.2rem, 0.35vw + 1.08rem, 1.36rem) !important;
+}
+
+.text-2xl {
+  font-size: clamp(1.42rem, 0.8vw + 1.18rem, 1.78rem) !important;
+}
+
+.text-3xl {
+  font-size: clamp(1.8rem, 1vw + 1.35rem, 2.32rem) !important;
+}
+
+.text-4xl {
+  font-size: clamp(2.1rem, 1.2vw + 1.55rem, 2.75rem) !important;
+}
+
+.text-5xl {
+  font-size: clamp(2.6rem, 1.5vw + 1.9rem, 3.4rem) !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.55rem, 2.6vw + 1.6rem, 3.45rem);
+  line-height: 1.08;
+  margin: 0 0 0.7rem;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 1.6vw + 1.2rem, 2.55rem);
+  line-height: 1.16;
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: clamp(1.22rem, 0.85vw + 0.95rem, 1.55rem);
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+  color: var(--text);
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
