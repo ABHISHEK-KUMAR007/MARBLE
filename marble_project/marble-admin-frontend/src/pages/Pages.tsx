@@ -49,6 +49,7 @@ import { GalleryFormDialog } from '@/components/admin/forms/GalleryFormDialog'
 import { VideoFormDialog } from '@/components/admin/forms/VideoFormDialog'
 import { BlogFormDialog } from '@/components/admin/forms/BlogFormDialog'
 import { TestimonialFormDialog } from '@/components/admin/forms/TestimonialFormDialog'
+import { ProjectFormDialog } from '@/components/admin/forms/ProjectFormDialog'
 
 import { ConfirmDialog } from '@/components/admin/ConfirmDialog'
 import { Edit2, Trash2, MoreHorizontal } from 'lucide-react'
@@ -717,8 +718,8 @@ export function ProjectsPage() {
   const [data, setData] = useState<any[]>([])
   const [, setIsLoading] = useState(true)
   const [refreshKey, setRefreshKey] = useState(0)
-  const [, setFormOpen] = useState(false)
-  const [, setEditingItem] = useState<any | null>(null)
+  const [formOpen, setFormOpen] = useState(false)
+  const [editingItem, setEditingItem] = useState<any | null>(null)
   const [deleteTarget, setDeleteTarget] = useState<any | null>(null)
   const [viewProject, setViewProject] = useState<any | null>(null)
 
@@ -1206,6 +1207,13 @@ export function ProjectsPage() {
         confirmLabel="Delete"
         destructive
         onConfirm={handleDelete}
+      />
+
+      <ProjectFormDialog
+        open={formOpen}
+        onOpenChange={setFormOpen}
+        project={editingItem}
+        onSuccess={reloadData}
       />
 
     </div>
