@@ -17,13 +17,14 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  tanstackStart: {
-    server: { entry: "server" },
-  },
-
   vite: {
     preview: {
-      allowedHosts: true,
+      host: "0.0.0.0",
+      allowedHosts: ["marble-8.onrender.com"],
     },
+  },
+
+  tanstackStart: {
+    server: { entry: "server" },
   },
 });
