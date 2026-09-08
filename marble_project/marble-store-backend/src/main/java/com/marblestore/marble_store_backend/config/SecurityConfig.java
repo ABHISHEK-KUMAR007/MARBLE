@@ -86,6 +86,8 @@ public class SecurityConfig {
                                                                         "http://localhost:5173",
                                                                         "http://localhost:8081",
                                                                         "http://localhost:8082",
+                                                                        "https://marble-sage.vercel.app",
+                                                                        "https://marble-3i65.vercel.app"
                                                                         "http://127.0.0.1:8082"));
 
                                         config.setAllowedMethods(
