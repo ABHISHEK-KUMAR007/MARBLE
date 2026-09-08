@@ -31,7 +31,7 @@ public class SecurityConfig {
         private final JwtAuthenticationFilter jwtAuthenticationFilter;
         private final CustomUserDetailsService userDetailsService;
 
-        @Value("${app.cors.allowed-origins:http://localhost:5173,http://localhost:5174,http://localhost:8081,http://localhost:8082,http://127.0.0.1:8082,https://marble-sage.vercel.app,https://marble-3i65.vercel.app,https://*.onrender.com,https://*.vercel.app}")
+        @Value("${app.cors.allowed-origins:http://localhost:5173,http://localhost:5174,http://localhost:8081,http://localhost:8082,http://127.0.0.1:8082,https://marble-sage.vercel.app,https://marble-3i65.vercel.app,https://marble-noqi.vercel.app,https://marble-7.onrender.com,https://*.onrender.com,https://*.vercel.app}")
         private String[] allowedOrigins;
 
         public SecurityConfig(
@@ -98,11 +98,17 @@ public class SecurityConfig {
                                         config.setAllowedHeaders(
                                                         List.of(
                                                                         "Authorization",
-                                                                        "Content-Type"));
+                                                                        "Content-Type",
+                                                                        "Origin",
+                                                                        "Accept",
+                                                                        "X-Requested-With",
+                                                                        "Access-Control-Request-Method",
+                                                                        "Access-Control-Request-Headers"));
 
                                         config.setExposedHeaders(
                                                         List.of(
-                                                                        "Authorization"));
+                                                                        "Authorization",
+                                                                        "Content-Type"));
 
                                         config.setAllowCredentials(true);
 

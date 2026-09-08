@@ -17,19 +17,15 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-<<<<<<< HEAD
   nitro: {
     preset: "netlify",
   },
-=======
   vite: {
     preview: {
       host: "0.0.0.0",
       allowedHosts: ["marble-8.onrender.com"],
     },
   },
-
->>>>>>> origin/master
   tanstackStart: {
     server: { entry: "server" },
   },
