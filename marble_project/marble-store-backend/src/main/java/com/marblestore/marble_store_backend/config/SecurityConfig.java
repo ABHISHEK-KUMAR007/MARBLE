@@ -2,6 +2,7 @@ package com.marblestore.marble_store_backend.config;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -29,6 +30,9 @@ public class SecurityConfig {
 
         private final JwtAuthenticationFilter jwtAuthenticationFilter;
         private final CustomUserDetailsService userDetailsService;
+
+        @Value("${app.cors.allowed-origins:http://localhost:5173,http://localhost:5174,http://localhost:8081,http://localhost:8082,http://127.0.0.1:8082,https://marble-sage.vercel.app,https://marble-3i65.vercel.app,https://*.onrender.com,https://*.vercel.app}")
+        private String[] allowedOrigins;
 
         public SecurityConfig(
                         JwtAuthenticationFilter jwtAuthenticationFilter,
@@ -80,13 +84,7 @@ public class SecurityConfig {
 
                                         CorsConfiguration config = new CorsConfiguration();
 
-                                        config.setAllowedOrigins(
-                                                        List.of(
-                                                                        "http://localhost:5174",
-                                                                        "http://localhost:5173",
-                                                                        "http://localhost:8081",
-                                                                        "http://localhost:8082",
-                                                                        "http://127.0.0.1:8082"));
+                                        config.setAllowedOriginPatterns(List.of(allowedOrigins));
 
                                         config.setAllowedMethods(
                                                         List.of(

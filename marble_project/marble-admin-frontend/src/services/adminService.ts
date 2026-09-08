@@ -5,7 +5,8 @@ import type {
 
 import { authService } from '@/services/authService'
 
-const API_URL = 'http://localhost:8080/api/admins'
+//const API_URL = 'http://localhost:8080/api/admins'
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/admins`
 
 function normalizeAdminStatus(status: unknown): AdminStatus {
   const value = String(status ?? '').toLowerCase()
